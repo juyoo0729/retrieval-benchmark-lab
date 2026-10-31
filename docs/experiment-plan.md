@@ -6,12 +6,12 @@
 - [x] Recall/MRR/nDCG 손계산 테스트
 - [x] 시스템 오류를 제외하지 않는 집계
 - [x] 임베딩과 리랭커 실행 코드
-- [ ] 세 방식 신경망 비교 실행 결과 확인
+- [x] 세 방식 신경망 비교 실행 결과 확인
 - [ ] 독립 검수한 실자료 평가
 
 첫 로컬 환경은 PyPI DNS 연결 실패로 신경망 의존성을 설치하지 못했습니다.
 코드가 있다는 사실과 실제 신경망 비교가 성공했다는 사실을 구분합니다.
-GitHub Actions의 Neural comparison은 이를 실행하는 별도 경로입니다.
+이후 GitHub Actions의 Neural comparison에서 dev/test 실행이 모두 성공했습니다. 결과: results/cloud-20261031/report.md.
 
 ## v0.2: 변경 하나의 효과
 dev에서 실패 유형을 읽고 토큰화 또는 모델 하나만 변경합니다.

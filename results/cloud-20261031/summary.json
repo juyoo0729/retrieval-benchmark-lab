@@ -1,0 +1,91 @@
+{
+  "source_run": "https://github.com/juyoo0729/retrieval-benchmark-lab/actions/runs/41170845618",
+  "source_commit": "933e9cb776a5bb96d33ca65e7d3129a7d7436b41",
+  "extracted_from": "completed job log summaries",
+  "rows": [
+    {
+      "split": "dev",
+      "method": "bm25",
+      "queries": 14,
+      "answerable": 12,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 1,
+      "mrr@5": 0.8958333333333334,
+      "ndcg@5": 0.9218005259704043,
+      "p50_ms": 0.5722865000024058,
+      "p95_ms": 0.815835849991231,
+      "unanswerable_with_results": 2
+    },
+    {
+      "split": "dev",
+      "method": "dense",
+      "queries": 14,
+      "answerable": 12,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 0.625,
+      "mrr@5": 0.5416666666666666,
+      "ndcg@5": 0.5233035056624095,
+      "p50_ms": 17.803646999993816,
+      "p95_ms": 18.901332250008807,
+      "unanswerable_with_results": 2
+    },
+    {
+      "split": "dev",
+      "method": "rerank",
+      "queries": 14,
+      "answerable": 12,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 0.625,
+      "mrr@5": 0.6944444444444443,
+      "ndcg@5": 0.611620131524698,
+      "p50_ms": 286.24779499998,
+      "p95_ms": 298.67381249998743,
+      "unanswerable_with_results": 2
+    },
+    {
+      "split": "test",
+      "method": "bm25",
+      "queries": 20,
+      "answerable": 18,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 0.8888888888888888,
+      "mrr@5": 0.8611111111111112,
+      "ndcg@5": 0.8683849863095254,
+      "p50_ms": 0.6185990000062702,
+      "p95_ms": 0.8388895500118566,
+      "unanswerable_with_results": 2
+    },
+    {
+      "split": "test",
+      "method": "dense",
+      "queries": 20,
+      "answerable": 18,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 0.8333333333333334,
+      "mrr@5": 0.6351851851851851,
+      "ndcg@5": 0.6482089283625191,
+      "p50_ms": 18.695934499987743,
+      "p95_ms": 19.58780230000201,
+      "unanswerable_with_results": 2
+    },
+    {
+      "split": "test",
+      "method": "rerank",
+      "queries": 20,
+      "answerable": 18,
+      "unanswerable": 2,
+      "errors": 0,
+      "recall@5": 0.8611111111111112,
+      "mrr@5": 1,
+      "ndcg@5": 0.8925408868792941,
+      "p50_ms": 288.89078850001226,
+      "p95_ms": 301.74744484999536,
+      "unanswerable_with_results": 2
+    }
+  ]
+}

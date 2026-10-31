@@ -1,0 +1,33 @@
+name: Neural comparison
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/neural.yml'
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e ".[neural]"
+      - run: python -m pip freeze > requirements-resolved.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m retrieval_lab.cli --methods bm25 dense rerank --split dev --output results/neural-dev
+      - run: python -m retrieval_lab.cli --methods bm25 dense rerank --split test --output results/neural-test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: neural-comparison
+          path: |
+            results/neural-*/
+            requirements-resolved.txt

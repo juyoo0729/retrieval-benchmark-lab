@@ -1,0 +1,1250 @@
+{
+  "created_at": "2026-10-31T05:01:34.508400+00:00",
+  "dataset_sha256": "3fe87993aaa63b44e1c7aa9ef7261fe7f0028c7522d9ed41c664dcad686776e3",
+  "git_commit": "933e9cb776a5bb96d33ca65e7d3129a7d7436b41",
+  "git_dirty": true,
+  "python": "3.11.17",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.43",
+  "processor": "",
+  "config": {
+    "data": "data",
+    "output": "results/neural-dev",
+    "split": "dev",
+    "methods": [
+      "bm25",
+      "dense",
+      "rerank"
+    ],
+    "k": 5,
+    "candidates": 10,
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "embedding_revision": null,
+    "reranker_revision": null,
+    "device": "cpu"
+  },
+  "packages": {
+    "sentence-transformers": "5.7.0",
+    "transformers": "5.22.1",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.4.6",
+    "huggingface-hub": "2.4.0"
+  },
+  "model_revisions": {
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1": "1427fd652930e4ba29e8149678df786c240d8825"
+  },
+  "methods": {
+    "bm25": {
+      "summary": {
+        "queries": 14,
+        "answerable": 12,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 1.0,
+        "mrr@5": 0.8958333333333334,
+        "ndcg@5": 0.9218005259704043,
+        "p50_ms": 0.5722865000024058,
+        "p95_ms": 0.815835849991231,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q01",
+          "query": "2024년 서울의 청년 실업률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-seoul24",
+            "unemployment-busan24",
+            "unemployment-seoul23",
+            "unemployment-confound",
+            "population-seoul24"
+          ],
+          "scores": [
+            13.213261032861595,
+            12.79412706676136,
+            12.79412706676136,
+            7.402233871508228,
+            0.8817504896125098
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5632630000036443
+        },
+        {
+          "query_id": "q02",
+          "query": "2024년 서울에서 일자리를 구하지만 취업하지 못한 청년 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-confound",
+            "unemployment-seoul24",
+            "unemployment-busan24",
+            "unemployment-seoul23",
+            "migration-seoul24"
+          ],
+          "scores": [
+            5.230416173652985,
+            5.230416173652985,
+            4.811282207552749,
+            4.811282207552749,
+            3.412105750970981
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 0.8384500000033768
+        },
+        {
+          "query_id": "q03",
+          "query": "서울 청년 실업률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul23",
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-seoul23",
+            "unemployment-seoul24",
+            "unemployment-busan24",
+            "unemployment-confound",
+            "population-seoul23"
+          ],
+          "scores": [
+            12.710776084622703,
+            11.200040652637961,
+            10.361772720437491,
+            7.821367837608463,
+            2.882355158031368
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6230920000120932
+        },
+        {
+          "query_id": "q04",
+          "query": "2024년 서울의 고용률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "employment-busan24",
+            "employment-seoul23",
+            "population-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            8.246212643817591,
+            7.823340813648585,
+            7.823340813648585,
+            0.8817504896125098,
+            0.8736966197924068
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.43144899998992514
+        },
+        {
+          "query_id": "q05",
+          "query": "2024년 서울에서 일하는 사람이 전체 인구에서 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "migration-busan24",
+            "migration-seoul23",
+            "employment-seoul24",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            9.89067591555983,
+            9.460124718022852,
+            9.460124718022852,
+            8.703102799282593,
+            8.598714033371348
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.43067655807339306,
+          "latency_ms": 0.803658999984691
+        },
+        {
+          "query_id": "q06",
+          "query": "서울 고용률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "employment-seoul23",
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul23",
+            "employment-seoul24",
+            "employment-busan24",
+            "population-seoul23",
+            "income-seoul23"
+          ],
+          "scores": [
+            7.730562971826627,
+            6.206354702645763,
+            5.360611042307751,
+            2.882355158031368,
+            2.856135762500166
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5590769999912482
+        },
+        {
+          "query_id": "q07",
+          "query": "2024년 서울의 주민등록 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "population-seoul24",
+            "population-seoul23",
+            "population-busan24",
+            "aging-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            15.879441704603465,
+            15.444945271785208,
+            15.444945271785205,
+            3.7633086128603606,
+            3.3801124765659747
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.49843799999393923
+        },
+        {
+          "query_id": "q08",
+          "query": "2024년 서울에서 주민으로 등록된 사람은 몇 명인지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "population-seoul24",
+            "population-seoul23",
+            "population-busan24",
+            "migration-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            10.299426416198356,
+            9.864929983380097,
+            9.864929983380096,
+            3.3995115262525304,
+            3.2640791852747184
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.7087490000117214
+        },
+        {
+          "query_id": "q09",
+          "query": "서울 주민등록 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "population-seoul23",
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "population-seoul23",
+            "population-seoul24",
+            "population-busan24",
+            "aging-seoul23",
+            "aging-seoul24"
+          ],
+          "scores": [
+            16.79932322360476,
+            15.233214988004157,
+            14.36422212236764,
+            8.53060764039266,
+            7.006399371211796
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6369720000236612
+        },
+        {
+          "query_id": "q10",
+          "query": "2024년 서울의 1인 가구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "household-busan24",
+            "household-seoul23",
+            "household-confound",
+            "income-seoul24"
+          ],
+          "scores": [
+            11.63483017360727,
+            11.215696207507035,
+            11.215696207507035,
+            8.07847363246577,
+            4.338814577253055
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5166739999822312
+        },
+        {
+          "query_id": "q11",
+          "query": "2024년 서울에서 혼자 사는 집의 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "household-busan24",
+            "household-seoul23",
+            "migration-seoul24",
+            "migration-busan24"
+          ],
+          "scores": [
+            10.579813528931453,
+            10.160679562831218,
+            10.160679562831218,
+            3.3995115262525304,
+            2.968960328715552
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5813100000011673
+        },
+        {
+          "query_id": "q12",
+          "query": "서울 1인 가구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "household-seoul23",
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul23",
+            "household-seoul24",
+            "household-busan24",
+            "household-confound",
+            "income-seoul23"
+          ],
+          "scores": [
+            12.186597825492395,
+            10.675862393507654,
+            9.837594461307182,
+            8.499468233966414,
+            6.321253719960815
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6654139999966446
+        },
+        {
+          "query_id": "q31",
+          "query": "2035년 제주 청년 실업률 확정 통계를 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "unemployment-busan24",
+            "unemployment-seoul23",
+            "unemployment-seoul24",
+            "unemployment-confound",
+            "housing-confound"
+          ],
+          "scores": [
+            12.387121312096632,
+            12.387121312096632,
+            12.387121312096632,
+            6.581349386426968,
+            0.029973854686971335
+          ],
+          "latency_ms": 0.5026329999964219
+        },
+        {
+          "query_id": "q32",
+          "query": "화성 식민지의 주민등록 인구 통계가 필요해.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "population-busan24",
+            "population-seoul23",
+            "population-seoul24",
+            "aging-busan24",
+            "aging-seoul23"
+          ],
+          "scores": [
+            15.010448838966948,
+            15.010448838966948,
+            15.010448838966948,
+            2.917564952522349,
+            2.917564952522349
+          ],
+          "latency_ms": 0.48930399998425855
+        }
+      ]
+    },
+    "dense": {
+      "summary": {
+        "queries": 14,
+        "answerable": 12,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 0.625,
+        "mrr@5": 0.5416666666666666,
+        "ndcg@5": 0.5233035056624095,
+        "p50_ms": 17.803646999993816,
+        "p95_ms": 18.901332250008807,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q01",
+          "query": "2024년 서울의 청년 실업률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "price-seoul24",
+            "household-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.7188906669616699,
+            0.663058340549469,
+            0.6349959373474121,
+            0.6223371028900146,
+            0.6188236474990845
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 17.496313000009422
+        },
+        {
+          "query_id": "q02",
+          "query": "2024년 서울에서 일자리를 구하지만 취업하지 못한 청년 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "price-seoul24",
+            "income-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            0.6369497776031494,
+            0.5683294534683228,
+            0.5426291227340698,
+            0.5222235321998596,
+            0.5178844928741455
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 19.29455300000882
+        },
+        {
+          "query_id": "q03",
+          "query": "서울 청년 실업률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul23",
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "price-seoul24",
+            "birth-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.694731593132019,
+            0.6372143626213074,
+            0.6219481229782104,
+            0.602730393409729,
+            0.6013989448547363
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.38685280723454163,
+          "latency_ms": 18.42168100000663
+        },
+        {
+          "query_id": "q04",
+          "query": "2024년 서울의 고용률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "birth-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.6576967239379883,
+            0.6054483652114868,
+            0.5929800271987915,
+            0.5721592903137207,
+            0.5655872225761414
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 16.594639000004463
+        },
+        {
+          "query_id": "q05",
+          "query": "2024년 서울에서 일하는 사람이 전체 인구에서 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "household-seoul24",
+            "price-seoul24",
+            "aging-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.6879174709320068,
+            0.6855854988098145,
+            0.6813423037528992,
+            0.663468599319458,
+            0.6633826494216919
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 18.6895980000088
+        },
+        {
+          "query_id": "q06",
+          "query": "서울 고용률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "employment-seoul23",
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "employment-seoul24",
+            "birth-seoul24",
+            "unemployment-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.651620626449585,
+            0.6012136936187744,
+            0.5842853784561157,
+            0.5743069648742676,
+            0.5573699474334717
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.38685280723454163,
+          "latency_ms": 17.675136999997676
+        },
+        {
+          "query_id": "q07",
+          "query": "2024년 서울의 주민등록 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "household-seoul24",
+            "migration-seoul24",
+            "aging-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.7098097801208496,
+            0.6751397252082825,
+            0.6740280389785767,
+            0.6717243194580078,
+            0.6696046590805054
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 17.088639999997213
+        },
+        {
+          "query_id": "q08",
+          "query": "2024년 서울에서 주민으로 등록된 사람은 몇 명인지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "price-seoul24",
+            "aging-seoul24",
+            "employment-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.6481552124023438,
+            0.6407151222229004,
+            0.6336941123008728,
+            0.6268294453620911,
+            0.6190094947814941
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 18.370196000006445
+        },
+        {
+          "query_id": "q09",
+          "query": "서울 주민등록 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "population-seoul23",
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "price-seoul24",
+            "birth-seoul24",
+            "migration-seoul24",
+            "employment-seoul24"
+          ],
+          "scores": [
+            0.6867103576660156,
+            0.6761749982833862,
+            0.6678205728530884,
+            0.6605297327041626,
+            0.6354880928993225
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 18.278831000003493
+        },
+        {
+          "query_id": "q10",
+          "query": "2024년 서울의 1인 가구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "aging-seoul24",
+            "price-seoul24",
+            "migration-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.7282044887542725,
+            0.6917538642883301,
+            0.6859318614006042,
+            0.6778926849365234,
+            0.6737083196640015
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 17.418106999997462
+        },
+        {
+          "query_id": "q11",
+          "query": "2024년 서울에서 혼자 사는 집의 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "housing-seoul24",
+            "price-seoul24",
+            "housing-seoul23",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.6724538803100586,
+            0.6200680136680603,
+            0.6159562468528748,
+            0.5660995244979858,
+            0.5640702247619629
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 17.932156999989957
+        },
+        {
+          "query_id": "q12",
+          "query": "서울 1인 가구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "household-seoul23",
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "aging-seoul24",
+            "price-seoul24",
+            "birth-seoul24",
+            "employment-seoul24"
+          ],
+          "scores": [
+            0.6934974193572998,
+            0.6799629926681519,
+            0.6781759262084961,
+            0.6723169088363647,
+            0.6643592119216919
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 18.405016999992085
+        },
+        {
+          "query_id": "q31",
+          "query": "2035년 제주 청년 실업률 확정 통계를 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "income-busan24",
+            "population-busan24",
+            "birth-busan24",
+            "income-seoul23",
+            "migration-busan24"
+          ],
+          "scores": [
+            0.8628575801849365,
+            0.7199249267578125,
+            0.6545788049697876,
+            0.5180021524429321,
+            0.49530959129333496
+          ],
+          "latency_ms": 17.157432000004746
+        },
+        {
+          "query_id": "q32",
+          "query": "화성 식민지의 주민등록 인구 통계가 필요해.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "aging-seoul23",
+            "aging-busan24",
+            "aging-seoul24",
+            "migration-seoul23"
+          ],
+          "scores": [
+            0.42554357647895813,
+            0.42205846309661865,
+            0.419483482837677,
+            0.40277594327926636,
+            0.3932456374168396
+          ],
+          "latency_ms": 17.063473000007434
+        }
+      ]
+    },
+    "rerank": {
+      "summary": {
+        "queries": 14,
+        "answerable": 12,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 0.625,
+        "mrr@5": 0.6944444444444443,
+        "ndcg@5": 0.611620131524698,
+        "p50_ms": 286.24779499998,
+        "p95_ms": 298.67381249998743,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q01",
+          "query": "2024년 서울의 청년 실업률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-seoul24",
+            "employment-seoul24",
+            "aging-seoul24",
+            "aging-confound",
+            "birth-seoul24"
+          ],
+          "scores": [
+            7.350799560546875,
+            1.5025677680969238,
+            -0.12485842406749725,
+            -0.8969290256500244,
+            -2.0311758518218994
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 278.21548299999677
+        },
+        {
+          "query_id": "q02",
+          "query": "2024년 서울에서 일자리를 구하지만 취업하지 못한 청년 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-seoul24",
+            "employment-seoul24",
+            "aging-seoul24",
+            "household-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            -0.39004915952682495,
+            -0.7237006425857544,
+            -2.4205844402313232,
+            -4.814614772796631,
+            -5.641934871673584
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 297.6383559999931
+        },
+        {
+          "query_id": "q03",
+          "query": "서울 청년 실업률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "unemployment-seoul23",
+            "unemployment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "unemployment-seoul24",
+            "employment-seoul24",
+            "aging-seoul24",
+            "aging-confound",
+            "income-confound"
+          ],
+          "scores": [
+            5.2566657066345215,
+            1.2857517004013062,
+            -0.5834457874298096,
+            -1.8140270709991455,
+            -1.9127204418182373
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 293.28048900001136
+        },
+        {
+          "query_id": "q04",
+          "query": "2024년 서울의 고용률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "aging-confound",
+            "household-seoul24",
+            "price-confound"
+          ],
+          "scores": [
+            5.379981517791748,
+            2.8087170124053955,
+            0.6708526015281677,
+            -0.38540491461753845,
+            -0.5440402626991272
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 275.6756760000201
+        },
+        {
+          "query_id": "q05",
+          "query": "2024년 서울에서 일하는 사람이 전체 인구에서 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "household-seoul24",
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            1.4568676948547363,
+            1.0326697826385498,
+            0.38501548767089844,
+            -0.7513708472251892,
+            -1.722349762916565
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "latency_ms": 298.0278629999873
+        },
+        {
+          "query_id": "q06",
+          "query": "서울 고용률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "employment-seoul23",
+            "employment-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "unemployment-seoul24",
+            "aging-confound",
+            "birth-seoul24",
+            "price-confound"
+          ],
+          "scores": [
+            3.269566297531128,
+            1.2280974388122559,
+            -0.6246338486671448,
+            -1.2845337390899658,
+            -1.3895422220230103
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 299.8734329999877
+        },
+        {
+          "query_id": "q07",
+          "query": "2024년 서울의 주민등록 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-confound",
+            "migration-seoul24",
+            "aging-seoul24",
+            "household-seoul24",
+            "income-confound"
+          ],
+          "scores": [
+            2.1834099292755127,
+            1.7991100549697876,
+            1.5283575057983398,
+            1.278317928314209,
+            -0.624243438243866
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 279.77929300001847
+        },
+        {
+          "query_id": "q08",
+          "query": "2024년 서울에서 주민으로 등록된 사람은 몇 명인지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "aging-seoul24",
+            "household-seoul24",
+            "aging-confound",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.4307219684123993,
+            -1.398403286933899,
+            -1.8711121082305908,
+            -1.9376187324523926,
+            -3.376946210861206
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 288.888146000005
+        },
+        {
+          "query_id": "q09",
+          "query": "서울 주민등록 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "population-seoul23",
+            "population-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul23",
+            "aging-confound",
+            "aging-seoul24",
+            "migration-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            1.1442269086837769,
+            0.8645631670951843,
+            0.47513917088508606,
+            0.18719540536403656,
+            0.08175268769264221
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 288.4009659999833
+        },
+        {
+          "query_id": "q10",
+          "query": "2024년 서울의 1인 가구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "aging-seoul24",
+            "employment-seoul24",
+            "aging-confound",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            7.626287937164307,
+            4.24061918258667,
+            1.471771478652954,
+            1.191739797592163,
+            -0.34300002455711365
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 277.35673000000816
+        },
+        {
+          "query_id": "q11",
+          "query": "2024년 서울에서 혼자 사는 집의 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "housing-seoul24",
+            "housing-seoul23",
+            "income-confound",
+            "household-busan24"
+          ],
+          "scores": [
+            2.497612237930298,
+            -0.29464635252952576,
+            -0.6355137228965759,
+            -1.8523838520050049,
+            -2.903862714767456
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 284.09462399997665
+        },
+        {
+          "query_id": "q12",
+          "query": "서울 1인 가구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "household-seoul23",
+            "household-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "aging-seoul24",
+            "employment-seoul24",
+            "aging-confound",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            5.012006759643555,
+            2.4505603313446045,
+            0.5136731266975403,
+            0.42998960614204407,
+            -0.9818369746208191
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 292.6199989999816
+        },
+        {
+          "query_id": "q31",
+          "query": "2035년 제주 청년 실업률 확정 통계를 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul23",
+            "income-seoul23",
+            "birth-busan24",
+            "income-seoul24",
+            "income-busan24"
+          ],
+          "scores": [
+            -7.863236904144287,
+            -8.868102073669434,
+            -9.14527416229248,
+            -9.212637901306152,
+            -9.563913345336914
+          ],
+          "latency_ms": 280.3421309999976
+        },
+        {
+          "query_id": "q32",
+          "query": "화성 식민지의 주민등록 인구 통계가 필요해.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "household-seoul23",
+            "aging-seoul24",
+            "aging-seoul23",
+            "migration-seoul24"
+          ],
+          "scores": [
+            -7.444129467010498,
+            -7.475179195404053,
+            -7.818371295928955,
+            -7.950291156768799,
+            -8.739034652709961
+          ],
+          "latency_ms": 276.1164069999893
+        }
+      ]
+    }
+  },
+  "bm25_setup_seconds": 0.0024127660000061724,
+  "torch_threads": 4,
+  "device": "cpu",
+  "dense_setup_seconds": 11.818896139999993,
+  "rerank_setup_seconds": 8.288030733999989
+}

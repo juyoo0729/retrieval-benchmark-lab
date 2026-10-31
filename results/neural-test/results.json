@@ -1,0 +1,1760 @@
+{
+  "created_at": "2026-10-31T05:02:01.702151+00:00",
+  "dataset_sha256": "3fe87993aaa63b44e1c7aa9ef7261fe7f0028c7522d9ed41c664dcad686776e3",
+  "git_commit": "933e9cb776a5bb96d33ca65e7d3129a7d7436b41",
+  "git_dirty": true,
+  "python": "3.11.17",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.43",
+  "processor": "",
+  "config": {
+    "data": "data",
+    "output": "results/neural-test",
+    "split": "test",
+    "methods": [
+      "bm25",
+      "dense",
+      "rerank"
+    ],
+    "k": 5,
+    "candidates": 10,
+    "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "embedding_revision": null,
+    "reranker_revision": null,
+    "device": "cpu"
+  },
+  "packages": {
+    "sentence-transformers": "5.7.0",
+    "transformers": "5.22.1",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.4.6",
+    "huggingface-hub": "2.4.0"
+  },
+  "model_revisions": {
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1": "1427fd652930e4ba29e8149678df786c240d8825"
+  },
+  "methods": {
+    "bm25": {
+      "summary": {
+        "queries": 20,
+        "answerable": 18,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 0.8888888888888888,
+        "mrr@5": 0.8611111111111112,
+        "ndcg@5": 0.8683849863095254,
+        "p50_ms": 0.6185990000062702,
+        "p95_ms": 0.8388895500118566,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q13",
+          "query": "2024년 서울의 합계출산율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "birth-busan24",
+            "birth-seoul23",
+            "population-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            12.933862787328405,
+            12.516573082400278,
+            12.516573082400278,
+            0.8817504896125098,
+            0.8736966197924068
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5913939999970808
+        },
+        {
+          "query_id": "q14",
+          "query": "2024년 서울에서 여성 한 명이 평생 낳을 것으로 예상되는 아이 수 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "birth-busan24",
+            "birth-seoul23",
+            "migration-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            29.621152079868285,
+            29.203862374940158,
+            29.203862374940158,
+            3.3995115262525304,
+            3.39951152625253
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.9431530000085786
+        },
+        {
+          "query_id": "q15",
+          "query": "서울 합계출산율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "birth-seoul23",
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul23",
+            "birth-seoul24",
+            "birth-busan24",
+            "population-seoul23",
+            "income-seoul23"
+          ],
+          "scores": [
+            12.437794529313447,
+            10.93370659174311,
+            10.099127181886857,
+            2.882355158031368,
+            2.856135762500166
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.619706000009046
+        },
+        {
+          "query_id": "q16",
+          "query": "2024년 서울의 고령 인구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "aging-busan24",
+            "aging-seoul23",
+            "aging-confound",
+            "employment-seoul24"
+          ],
+          "scores": [
+            10.966530489838942,
+            10.543658659669934,
+            10.543658659669934,
+            7.129716822554486,
+            4.697276236444033
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.508080999992444
+        },
+        {
+          "query_id": "q17",
+          "query": "2024년 서울에서 65살 이상 주민이 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "employment-seoul24",
+            "employment-busan24",
+            "employment-seoul23",
+            "unemployment-seoul24",
+            "unemployment-busan24"
+          ],
+          "scores": [
+            11.537481914086605,
+            11.114610083917599,
+            11.114610083917599,
+            7.757187396639729,
+            7.338053430539493
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 0.7243709999897874
+        },
+        {
+          "query_id": "q18",
+          "query": "서울 고령 인구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "aging-seoul23",
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul23",
+            "aging-seoul24",
+            "aging-busan24",
+            "aging-confound",
+            "employment-seoul23"
+          ],
+          "scores": [
+            11.523218841660366,
+            9.999010572479502,
+            9.15326691214149,
+            7.550711424055129,
+            5.670865071057898
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6473370000037448
+        },
+        {
+          "query_id": "q19",
+          "query": "2024년 서울의 소비자물가지수 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "price-busan24",
+            "price-seoul23",
+            "price-confound",
+            "income-confound"
+          ],
+          "scores": [
+            17.9345337721104,
+            17.522680738650063,
+            17.522680738650063,
+            9.27631884028593,
+            2.788734060329044
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.4814119999991817
+        },
+        {
+          "query_id": "q20",
+          "query": "2024년 서울에서 생활에 필요한 물건과 서비스의 가격 수준 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "price-busan24",
+            "price-seoul23",
+            "migration-seoul24",
+            "migration-busan24"
+          ],
+          "scores": [
+            7.956934174293662,
+            7.545081140833324,
+            7.545081140833324,
+            3.3995115262525304,
+            2.968960328715552
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.7936830000119244
+        },
+        {
+          "query_id": "q21",
+          "query": "서울 소비자물가지수의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "price-seoul23",
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul23",
+            "price-seoul24",
+            "price-busan24",
+            "price-confound",
+            "housing-seoul23"
+          ],
+          "scores": [
+            17.45708139712949,
+            15.97258951447894,
+            15.148883447558266,
+            9.69178044306895,
+            5.3242628712700135
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6222600000000966
+        },
+        {
+          "query_id": "q22",
+          "query": "2024년 서울의 주택 보급률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "housing-seoul24",
+            "housing-busan24",
+            "housing-seoul23",
+            "housing-confound",
+            "population-seoul24"
+          ],
+          "scores": [
+            14.720606387578107,
+            14.293929424400018,
+            14.293929424400018,
+            5.312114335918203,
+            0.8817504896125098
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.47160699998016753
+        },
+        {
+          "query_id": "q23",
+          "query": "2024년 서울에서 가구 수에 비해 집이 얼마나 공급되어 있는지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "income-seoul24",
+            "household-busan24",
+            "household-seoul23",
+            "income-busan24"
+          ],
+          "scores": [
+            4.510734862626064,
+            4.338814577253055,
+            4.091600896525829,
+            4.091600896525829,
+            3.908263379716077
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 0.833402000012029
+        },
+        {
+          "query_id": "q24",
+          "query": "서울 주택 보급률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "housing-seoul23",
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "housing-seoul23",
+            "housing-seoul24",
+            "housing-busan24",
+            "housing-confound",
+            "population-seoul23"
+          ],
+          "scores": [
+            14.19133347114375,
+            12.653409899159533,
+            11.800055972803356,
+            5.7368802109875,
+            2.882355158031368
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6174920000034945
+        },
+        {
+          "query_id": "q25",
+          "query": "2024년 서울의 가구 월평균 소득 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-busan24",
+            "income-seoul23",
+            "income-confound",
+            "household-seoul24"
+          ],
+          "scores": [
+            18.509207745842144,
+            18.078656548305165,
+            18.078656548305165,
+            9.537043209596604,
+            4.510734862626064
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.5316259999972317
+        },
+        {
+          "query_id": "q26",
+          "query": "2024년 서울에서 한 집이 한 달에 평균적으로 버는 돈 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-busan24",
+            "income-seoul23",
+            "birth-seoul24",
+            "birth-busan24"
+          ],
+          "scores": [
+            5.871627144224657,
+            5.441075946687679,
+            5.441075946687679,
+            4.932815100207039,
+            4.515525395278912
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.7358480000050349
+        },
+        {
+          "query_id": "q27",
+          "query": "서울 가구 월평균 소득의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "income-seoul23",
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul23",
+            "income-seoul24",
+            "income-busan24",
+            "income-confound",
+            "household-seoul23"
+          ],
+          "scores": [
+            16.910369759685388,
+            15.358481814514608,
+            14.497379419440652,
+            9.950692657814871,
+            6.4406042607110425
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.6708709999827533
+        },
+        {
+          "query_id": "q28",
+          "query": "2024년 서울의 순이동 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "migration-busan24",
+            "migration-seoul23",
+            "aging-seoul24",
+            "aging-busan24"
+          ],
+          "scores": [
+            10.957557195946343,
+            10.527005998409365,
+            10.527005998409365,
+            3.7633086128603606,
+            3.340436782691355
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.4691729999990457
+        },
+        {
+          "query_id": "q29",
+          "query": "2024년 서울에서 들어온 사람에서 떠난 사람을 뺀 인원 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "population-seoul24",
+            "migration-seoul24",
+            "population-busan24",
+            "population-seoul23",
+            "migration-busan24"
+          ],
+          "scores": [
+            5.9989208641203335,
+            5.925326432712653,
+            5.564424431302075,
+            5.564424431302075,
+            5.494775235175675
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 0.7144960000005085
+        },
+        {
+          "query_id": "q30",
+          "query": "서울 순이동 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "migration-seoul23",
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul23",
+            "migration-seoul24",
+            "migration-busan24",
+            "aging-seoul23",
+            "aging-seoul24"
+          ],
+          "scores": [
+            11.87311505826759,
+            10.321227113096809,
+            9.460124718022852,
+            8.53060764039266,
+            7.006399371211796
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 0.611563000006754
+        },
+        {
+          "query_id": "q33",
+          "query": "2024년 서울 고령 인구 비율을 동별로 알려줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "aging-seoul23",
+            "aging-busan24",
+            "aging-confound",
+            "employment-seoul24"
+          ],
+          "scores": [
+            9.999010572479502,
+            9.576138742310494,
+            9.15326691214149,
+            7.550711424055129,
+            4.1466568018770324
+          ],
+          "latency_ms": 0.4998290000060024
+        },
+        {
+          "query_id": "q34",
+          "query": "2024년 부산 가구 월평균 소득을 월별로 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "income-busan24",
+            "income-seoul24",
+            "income-seoul23",
+            "income-confound",
+            "household-busan24"
+          ],
+          "scores": [
+            18.462257704856167,
+            14.497379419440652,
+            14.066828221903673,
+            9.123393761378336,
+            7.9513396926957824
+          ],
+          "latency_ms": 0.5127879999804463
+        }
+      ]
+    },
+    "dense": {
+      "summary": {
+        "queries": 20,
+        "answerable": 18,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 0.8333333333333334,
+        "mrr@5": 0.6351851851851851,
+        "ndcg@5": 0.6482089283625191,
+        "p50_ms": 18.695934499987743,
+        "p95_ms": 19.58780230000201,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q13",
+          "query": "2024년 서울의 합계출산율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "birth-seoul24",
+            "income-seoul24",
+            "household-seoul24",
+            "aging-confound"
+          ],
+          "scores": [
+            0.7405680418014526,
+            0.639341413974762,
+            0.636594295501709,
+            0.6333522796630859,
+            0.6253960728645325
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 18.065366999991284
+        },
+        {
+          "query_id": "q14",
+          "query": "2024년 서울에서 여성 한 명이 평생 낳을 것으로 예상되는 아이 수 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "aging-seoul24",
+            "employment-seoul24",
+            "price-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            0.724114179611206,
+            0.5766260623931885,
+            0.5617674589157104,
+            0.5612348914146423,
+            0.5546192526817322
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 19.907179000000497
+        },
+        {
+          "query_id": "q15",
+          "query": "서울 합계출산율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "birth-seoul23",
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "birth-seoul24",
+            "household-seoul24",
+            "employment-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.723707914352417,
+            0.6498016119003296,
+            0.6304215788841248,
+            0.6294577121734619,
+            0.6243765354156494
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.38685280723454163,
+          "latency_ms": 19.165222999987463
+        },
+        {
+          "query_id": "q16",
+          "query": "2024년 서울의 고령 인구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "employment-seoul24",
+            "price-seoul24",
+            "birth-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.7225448489189148,
+            0.6846991777420044,
+            0.6802060604095459,
+            0.6757297515869141,
+            0.6435825824737549
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 17.526051000004372
+        },
+        {
+          "query_id": "q17",
+          "query": "2024년 서울에서 65살 이상 주민이 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "employment-seoul24",
+            "household-seoul24",
+            "price-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.7632842063903809,
+            0.706828236579895,
+            0.6795693635940552,
+            0.6683551073074341,
+            0.6607864499092102
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 18.72487199997863
+        },
+        {
+          "query_id": "q18",
+          "query": "서울 고령 인구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "aging-seoul23",
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "birth-seoul24",
+            "employment-seoul24",
+            "price-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.7033165097236633,
+            0.6661757230758667,
+            0.662724494934082,
+            0.6593432426452637,
+            0.6246196627616882
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 18.666996999996854
+        },
+        {
+          "query_id": "q19",
+          "query": "2024년 서울의 소비자물가지수 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "household-seoul24",
+            "income-seoul24",
+            "aging-confound",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.7249419093132019,
+            0.6070894002914429,
+            0.5970285534858704,
+            0.5928905606269836,
+            0.5894389152526855
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 17.14785199999369
+        },
+        {
+          "query_id": "q20",
+          "query": "2024년 서울에서 생활에 필요한 물건과 서비스의 가격 수준 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "income-seoul24",
+            "household-seoul24",
+            "employment-seoul24",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            0.6988312005996704,
+            0.6190017461776733,
+            0.6123327612876892,
+            0.6040775775909424,
+            0.5942362546920776
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 18.54604799999038
+        },
+        {
+          "query_id": "q21",
+          "query": "서울 소비자물가지수의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "price-seoul23",
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "household-seoul24",
+            "employment-seoul24",
+            "migration-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.7107665538787842,
+            0.6117035150527954,
+            0.5987340211868286,
+            0.5971760153770447,
+            0.5962653160095215
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 18.966820000002826
+        },
+        {
+          "query_id": "q22",
+          "query": "2024년 서울의 주택 보급률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "housing-seoul24",
+            "price-seoul24",
+            "housing-seoul23",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.6653256416320801,
+            0.6581217050552368,
+            0.6464806795120239,
+            0.5954045057296753,
+            0.5849041938781738
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 17.535124999994878
+        },
+        {
+          "query_id": "q23",
+          "query": "2024년 서울에서 가구 수에 비해 집이 얼마나 공급되어 있는지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "housing-seoul24",
+            "price-seoul24",
+            "migration-seoul24",
+            "housing-seoul23"
+          ],
+          "scores": [
+            0.6713256239891052,
+            0.6461347937583923,
+            0.6312897205352783,
+            0.5919172167778015,
+            0.5917961001396179
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "latency_ms": 19.09608100001492
+        },
+        {
+          "query_id": "q24",
+          "query": "서울 주택 보급률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "housing-seoul23",
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "housing-seoul24",
+            "price-seoul24",
+            "housing-seoul23",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.64931321144104,
+            0.6474400758743286,
+            0.626423180103302,
+            0.5940585136413574,
+            0.5732787847518921
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6509209298071326,
+          "latency_ms": 18.862955999992437
+        },
+        {
+          "query_id": "q25",
+          "query": "2024년 서울의 가구 월평균 소득 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "employment-seoul24",
+            "birth-seoul24",
+            "household-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.6697471141815186,
+            0.6531984210014343,
+            0.6447772979736328,
+            0.6393400430679321,
+            0.6367454528808594
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "latency_ms": 18.032699000002594
+        },
+        {
+          "query_id": "q26",
+          "query": "2024년 서울에서 한 집이 한 달에 평균적으로 버는 돈 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "household-seoul24",
+            "price-seoul24",
+            "income-seoul24",
+            "employment-seoul24",
+            "birth-seoul24"
+          ],
+          "scores": [
+            0.678960919380188,
+            0.6669886112213135,
+            0.6482099294662476,
+            0.6232091188430786,
+            0.6096004843711853
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "latency_ms": 19.57099300000209
+        },
+        {
+          "query_id": "q27",
+          "query": "서울 가구 월평균 소득의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "income-seoul23",
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "employment-seoul24",
+            "birth-seoul24",
+            "household-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.6378250122070312,
+            0.6217111349105835,
+            0.6209908723831177,
+            0.600598931312561,
+            0.5986790657043457
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.23719771276929622,
+          "latency_ms": 18.963670000005095
+        },
+        {
+          "query_id": "q28",
+          "query": "2024년 서울의 순이동 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "aging-seoul24",
+            "household-seoul24",
+            "birth-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.7011983394622803,
+            0.6710403561592102,
+            0.6677426099777222,
+            0.6660945415496826,
+            0.6651033163070679
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "latency_ms": 17.086513999998942
+        },
+        {
+          "query_id": "q29",
+          "query": "2024년 서울에서 들어온 사람에서 떠난 사람을 뺀 인원 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "price-seoul24",
+            "household-seoul24",
+            "aging-seoul24",
+            "income-seoul24"
+          ],
+          "scores": [
+            0.598807692527771,
+            0.594782829284668,
+            0.579521894454956,
+            0.5716675519943237,
+            0.5684590339660645
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 19.37459499998795
+        },
+        {
+          "query_id": "q30",
+          "query": "서울 순이동 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "migration-seoul23",
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "aging-seoul24",
+            "birth-seoul24",
+            "employment-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            0.6645820140838623,
+            0.6554645299911499,
+            0.6503913998603821,
+            0.6288269758224487,
+            0.6275312304496765
+          ],
+          "recall@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0,
+          "latency_ms": 19.533168999998907
+        },
+        {
+          "query_id": "q33",
+          "query": "2024년 서울 고령 인구 비율을 동별로 알려줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "employment-seoul24",
+            "price-seoul24",
+            "birth-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            0.6953645348548889,
+            0.6753835082054138,
+            0.6744297742843628,
+            0.6714619398117065,
+            0.6513468623161316
+          ],
+          "latency_ms": 17.16080400001374
+        },
+        {
+          "query_id": "q34",
+          "query": "2024년 부산 가구 월평균 소득을 월별로 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "employment-seoul24",
+            "household-seoul24",
+            "aging-seoul24",
+            "migration-seoul24"
+          ],
+          "scores": [
+            0.6357467174530029,
+            0.5983502864837646,
+            0.5953768491744995,
+            0.5882677435874939,
+            0.5829405784606934
+          ],
+          "latency_ms": 17.56639300000984
+        }
+      ]
+    },
+    "rerank": {
+      "summary": {
+        "queries": 20,
+        "answerable": 18,
+        "unanswerable": 2,
+        "errors": 0,
+        "recall@5": 0.8611111111111112,
+        "mrr@5": 1.0,
+        "ndcg@5": 0.8925408868792941,
+        "p50_ms": 288.89078850001226,
+        "p95_ms": 301.74744484999536,
+        "unanswerable_with_results": 2
+      },
+      "queries": [
+        {
+          "query_id": "q13",
+          "query": "2024년 서울의 합계출산율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "employment-seoul24",
+            "income-confound",
+            "price-confound",
+            "price-seoul24"
+          ],
+          "scores": [
+            5.6665263175964355,
+            1.2949880361557007,
+            1.0463889837265015,
+            0.9246612191200256,
+            0.7746689915657043
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 280.8604500000058
+        },
+        {
+          "query_id": "q14",
+          "query": "2024년 서울에서 여성 한 명이 평생 낳을 것으로 예상되는 아이 수 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "birth-seoul23",
+            "birth-busan24",
+            "aging-confound",
+            "aging-seoul24"
+          ],
+          "scores": [
+            6.773521423339844,
+            6.194947242736816,
+            -0.2848696708679199,
+            -5.099820137023926,
+            -5.761531829833984
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 308.21464299998524
+        },
+        {
+          "query_id": "q15",
+          "query": "서울 합계출산율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "birth-seoul23",
+            "birth-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "birth-seoul24",
+            "employment-seoul24",
+            "income-confound",
+            "price-confound",
+            "migration-seoul24"
+          ],
+          "scores": [
+            2.8685381412506104,
+            0.7191691994667053,
+            -0.13235855102539062,
+            -0.18513183295726776,
+            -0.35461387038230896
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 301.4070659999959
+        },
+        {
+          "query_id": "q16",
+          "query": "2024년 서울의 고령 인구 비율 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "aging-confound",
+            "household-seoul24",
+            "employment-seoul24",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            8.4033842086792,
+            3.4686944484710693,
+            2.842198371887207,
+            0.9128875732421875,
+            0.8890740275382996
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 276.8228539999882
+        },
+        {
+          "query_id": "q17",
+          "query": "2024년 서울에서 65살 이상 주민이 차지하는 비중 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "aging-seoul23",
+            "employment-seoul24",
+            "aging-confound",
+            "household-seoul24"
+          ],
+          "scores": [
+            4.029642581939697,
+            3.6215317249298096,
+            -1.135259985923767,
+            -2.658062219619751,
+            -2.682215690612793
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 292.93039099999874
+        },
+        {
+          "query_id": "q18",
+          "query": "서울 고령 인구 비율의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "aging-seoul23",
+            "aging-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "aging-confound",
+            "household-seoul24",
+            "employment-seoul24",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            5.24783182144165,
+            2.1119635105133057,
+            1.8618193864822388,
+            0.22579707205295563,
+            -0.02591336891055107
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 293.68295399999056
+        },
+        {
+          "query_id": "q19",
+          "query": "2024년 서울의 소비자물가지수 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "price-confound",
+            "income-confound",
+            "birth-confound",
+            "aging-confound"
+          ],
+          "scores": [
+            6.496250629425049,
+            3.418874740600586,
+            1.7368310689926147,
+            -1.3351430892944336,
+            -2.319248914718628
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 275.8730410000112
+        },
+        {
+          "query_id": "q20",
+          "query": "2024년 서울에서 생활에 필요한 물건과 서비스의 가격 수준 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "income-confound",
+            "income-seoul24",
+            "household-seoul24",
+            "income-seoul23"
+          ],
+          "scores": [
+            2.15073561668396,
+            -3.5562946796417236,
+            -4.567566871643066,
+            -4.631621837615967,
+            -4.83328104019165
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 291.44432600000414
+        },
+        {
+          "query_id": "q21",
+          "query": "서울 소비자물가지수의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "price-seoul23",
+            "price-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "price-seoul24",
+            "price-confound",
+            "income-confound",
+            "aging-confound",
+            "household-seoul24"
+          ],
+          "scores": [
+            4.0776143074035645,
+            1.422351598739624,
+            0.14938879013061523,
+            -3.4681265354156494,
+            -3.6367292404174805
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 284.5451539999999
+        },
+        {
+          "query_id": "q22",
+          "query": "2024년 서울의 주택 보급률 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "housing-seoul24",
+            "housing-seoul23",
+            "employment-seoul24",
+            "household-seoul24",
+            "price-seoul24"
+          ],
+          "scores": [
+            6.1732563972473145,
+            5.334418296813965,
+            -0.9594846963882446,
+            -1.274854063987732,
+            -1.29595947265625
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 281.0354979999943
+        },
+        {
+          "query_id": "q23",
+          "query": "2024년 서울에서 가구 수에 비해 집이 얼마나 공급되어 있는지 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "housing-seoul24",
+            "housing-seoul23",
+            "household-seoul24",
+            "income-seoul24",
+            "price-seoul24"
+          ],
+          "scores": [
+            4.361765384674072,
+            2.8141555786132812,
+            -0.02312839776277542,
+            -1.6757563352584839,
+            -2.5652589797973633
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 293.04192700001863
+        },
+        {
+          "query_id": "q24",
+          "query": "서울 주택 보급률의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "housing-seoul23",
+            "housing-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "housing-seoul23",
+            "housing-seoul24",
+            "employment-seoul24",
+            "birth-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            5.329955101013184,
+            4.4281792640686035,
+            -0.7326052784919739,
+            -1.4010062217712402,
+            -1.6760541200637817
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 289.63326000001643
+        },
+        {
+          "query_id": "q25",
+          "query": "2024년 서울의 가구 월평균 소득 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-confound",
+            "household-seoul24",
+            "aging-confound",
+            "price-seoul24"
+          ],
+          "scores": [
+            6.097344398498535,
+            3.9128127098083496,
+            -1.0158157348632812,
+            -1.5430285930633545,
+            -2.3064770698547363
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 280.99877400001105
+        },
+        {
+          "query_id": "q26",
+          "query": "2024년 서울에서 한 집이 한 달에 평균적으로 버는 돈 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-seoul23",
+            "housing-seoul24",
+            "birth-seoul24",
+            "household-seoul24"
+          ],
+          "scores": [
+            0.864654004573822,
+            0.21881364285945892,
+            -2.690863847732544,
+            -3.2804243564605713,
+            -3.8909695148468018
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 298.9798790000009
+        },
+        {
+          "query_id": "q27",
+          "query": "서울 가구 월평균 소득의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "income-seoul23",
+            "income-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-confound",
+            "household-seoul24",
+            "aging-confound",
+            "aging-seoul24"
+          ],
+          "scores": [
+            4.230443477630615,
+            3.1999189853668213,
+            -0.37508535385131836,
+            -1.1579197645187378,
+            -2.042314291000366
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 300.7138110000085
+        },
+        {
+          "query_id": "q28",
+          "query": "2024년 서울의 순이동 인구 자료를 찾아줘.",
+          "category": "exact",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "aging-confound",
+            "aging-seoul24",
+            "household-seoul24",
+            "income-confound"
+          ],
+          "scores": [
+            5.7837958335876465,
+            1.7615909576416016,
+            1.2299742698669434,
+            0.025790847837924957,
+            -1.2943377494812012
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 271.94125200000485
+        },
+        {
+          "query_id": "q29",
+          "query": "2024년 서울에서 들어온 사람에서 떠난 사람을 뺀 인원 확인할 자료는?",
+          "category": "paraphrase",
+          "answerable": true,
+          "gold": [
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "aging-seoul24",
+            "employment-seoul24",
+            "household-seoul24",
+            "unemployment-seoul24"
+          ],
+          "scores": [
+            2.2013988494873047,
+            -4.501819133758545,
+            -5.013460159301758,
+            -5.518491268157959,
+            -6.591549396514893
+          ],
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "latency_ms": 294.89291100000514
+        },
+        {
+          "query_id": "q30",
+          "query": "서울 순이동 인구의 2023년과 2024년 자료를 함께 찾아줘.",
+          "category": "multi_gold_year",
+          "answerable": true,
+          "gold": [
+            "migration-seoul23",
+            "migration-seoul24"
+          ],
+          "status": "ok",
+          "ranked": [
+            "migration-seoul24",
+            "aging-confound",
+            "aging-seoul24",
+            "household-seoul24",
+            "income-confound"
+          ],
+          "scores": [
+            2.9732813835144043,
+            0.40066686272621155,
+            0.04197816178202629,
+            -0.8313490748405457,
+            -1.643019437789917
+          ],
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "latency_ms": 288.1483170000081
+        },
+        {
+          "query_id": "q33",
+          "query": "2024년 서울 고령 인구 비율을 동별로 알려줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "aging-seoul24",
+            "household-seoul24",
+            "aging-confound",
+            "migration-seoul24",
+            "employment-seoul24"
+          ],
+          "scores": [
+            5.3615007400512695,
+            1.5185601711273193,
+            1.0220556259155273,
+            0.06441380828619003,
+            -0.5197108387947083
+          ],
+          "latency_ms": 274.4536339999968
+        },
+        {
+          "query_id": "q34",
+          "query": "2024년 부산 가구 월평균 소득을 월별로 찾아줘.",
+          "category": "unanswerable",
+          "answerable": false,
+          "gold": [],
+          "status": "ok",
+          "ranked": [
+            "income-seoul24",
+            "income-seoul23",
+            "household-busan24",
+            "aging-busan24",
+            "household-seoul24"
+          ],
+          "scores": [
+            -1.3459900617599487,
+            -2.1594650745391846,
+            -2.1725175380706787,
+            -4.015560150146484,
+            -6.357646942138672
+          ],
+          "latency_ms": 280.26296699999875
+        }
+      ]
+    }
+  },
+  "bm25_setup_seconds": 0.0024607750000029682,
+  "torch_threads": 4,
+  "device": "cpu",
+  "dense_setup_seconds": 5.00071589800001,
+  "rerank_setup_seconds": 2.3846895019999863
+}

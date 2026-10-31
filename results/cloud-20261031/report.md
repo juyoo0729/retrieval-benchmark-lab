@@ -26,3 +26,5 @@
 원본 질의별 결과, 모델 revision, 전체 패키지 버전은
 [neural-comparison artifact](https://github.com/juyoo0729/retrieval-benchmark-lab/actions/runs/41170845618/artifacts/13030697139)에 있습니다.
 artifact는 GitHub 보관 기간의 적용을 받습니다. 아래 summary.json은 실행 로그에서 추출한 집계이며 원시 질의 결과를 대체하지 않습니다.
+
+원시 결과를 저장소에도 보관했습니다: [dev](../neural-dev/results.json), [test](../neural-test/results.json), [패키지 목록](../../requirements-resolved.txt). 위 artifact가 만료되어도 이 파일들은 남습니다.
